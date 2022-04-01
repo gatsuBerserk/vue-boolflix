@@ -4,8 +4,7 @@
         <div class="row"> 
           <div class="col-12 text-end"> 
             <input v-model="search" class="mx-2 rounded-pill my-border p-3" type="text" placeholder="Cerca...">
-            <button @click="$emit('searchHeader', search)" class="btn btn-outline-warning rounded-pill my-size">Cerca</button> 
-            <h1>{{search}}</h1>
+            <button @click="$emit('searchHeader', search)" class="btn btn-outline-warning rounded-pill my-size">Cerca</button>
           </div>
         </div>
       </div>

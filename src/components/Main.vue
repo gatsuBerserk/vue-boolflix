@@ -1,18 +1,21 @@
 <template>
   <div> 
-      
+      <pre> {{sendSearchFromApp}}v</pre>
   </div>
 </template>
 
 <script>
 export default { 
-    name : "MainPage",
+    name : "MainPage", 
+    props:{
+      sendSearchFromApp : String
+    },
 
 }
 </script>
 
 <style lang="scss" scoped> 
-@import "./src/assets/style/style.scss";
+  @import "../assets/style/style.scss";
 
 
 </style>

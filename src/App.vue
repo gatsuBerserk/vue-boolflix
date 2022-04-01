@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header @searchHeader="searchFromHeader"/> 
-    <Main/>
+    <Main :sendSearchFromApp="searchFilm" />
   </div>
 </template>
 
