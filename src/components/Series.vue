@@ -11,9 +11,10 @@
                 <p class="card-text">
                     Descrizionefw-bold: 
                         {{seriesObject.overview}}</p> 
-                <p class="card-text">
-                    Lingua originale:
-                        {{seriesObject.original_language}}</p>
+                <p>Lingua Originale: {{seriesObject.original_language}}  
+                    <lang-flag 
+                        :iso="seriesObject.original_language" /> 
+                </p>
                 <p class="card-text">
                     Voto Medio:
                         {{seriesObject.vote_average}}</p>
@@ -21,7 +22,7 @@
         </div>
 </template>
 
-<script>
+<script> 
 export default { 
     name: "SeriesCard", 
     props:[

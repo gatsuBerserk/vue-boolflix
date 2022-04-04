@@ -11,9 +11,12 @@
                 <p class="card-text">
                     Descrizionefw-bold: 
                         {{filmObject.overview}}</p> 
-                <p class="card-text">
+                <p class="card-text"> 
                     Lingua originale:
-                        {{filmObject.original_language}}</p>
+                        {{filmObject.original_language}} 
+                    <lang-flag 
+                        :iso="seriesObject.original_language" />  
+                </p>
                 <p class="card-text">
                     Voto Medio:
                         {{filmObject.vote_average}}</p>
@@ -23,7 +26,7 @@
 
 <script>
 export default { 
-    name: "FilmCard", 
+    name: "FilmCard",  
     props:[
         "filmObject"
         ]
