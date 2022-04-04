@@ -9,7 +9,7 @@
                 <p class="card-text">
                     {{filmObject.title}}</p>
                 <p class="card-text">
-                    Descrizionefw-bold: 
+                    Descrizione: 
                         {{filmObject.overview}}</p> 
                 <p class="card-text"> 
                     Lingua originale:
