@@ -11,14 +11,19 @@
   </div>
 </template>
 
-<script>
+<script> 
+
 export default { 
     name : "HeaderSearch",
     data: function(){
       return{
-        search: "",
+        search: "", 
+        films:"", 
       }
-    }
+    }, 
+    methods: {   
+     
+    }, 
 
 }
 </script>
