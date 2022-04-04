@@ -1,7 +1,7 @@
 <template>  
     
       <div class="card m-2" style="width: 18rem;">
-            <img src="#" class="card-img-top" alt="...">
+            <img :src="`https://image.tmdb.org/t/p/w342${filmObject.backdrop_path}`" class="card-img-top" :alt="filmObject.title">
             <div class="card-body"> 
                 <p class="card-text">
                     Titotlo Originale:
@@ -15,11 +15,11 @@
                     Lingua originale:
                         {{filmObject.original_language}} 
                     <lang-flag 
-                        :iso="seriesObject.original_language" />  
+                        :iso="filmObject.original_language" />  
                 </p>
-                <p class="card-text">
-                    Voto Medio:
-                        {{filmObject.vote_average}}</p>
+                <p v-for="n in 5 - star(filmObject.vote_average)" :key="n">
+                  <i class="fa-solid fa-star fs-1"></i>
+                </p>
             </div>
         </div>
 </template>
@@ -29,7 +29,13 @@ export default {
     name: "FilmCard",  
     props:[
         "filmObject"
-        ]
+        ], 
+    methods:{
+        star: function (vote){
+          return Math.ceil(vote / 2);
+
+        }
+    }
 
 }
 </script>

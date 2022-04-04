@@ -1,7 +1,7 @@
 <template>  
     
       <div class="card m-2" style="width: 18rem;">
-            <img src="#" class="card-img-top" alt="...">
+            <img :src="`https://image.tmdb.org/t/p/w342${seriesObject.backdrop_path}`" class="card-img-top" :alt="seriesObject.name">
             <div class="card-body"> 
                 <p class="card-text">
                     Titotlo Originale:
@@ -9,15 +9,15 @@
                 <p class="card-text">
                     {{seriesObject.name}}</p>
                 <p class="card-text">
-                    Descrizionefw-bold: 
+                    Descrizione: 
                         {{seriesObject.overview}}</p> 
                 <p>Lingua Originale: {{seriesObject.original_language}}  
                     <lang-flag 
                         :iso="seriesObject.original_language" /> 
                 </p>
-                <p class="card-text">
-                    Voto Medio:
-                        {{seriesObject.vote_average}}</p>
+                <p class="card-text" v-for="n in 5 - star(filmObject.vote_average)" :key="n">
+                    <i class="fa-solid fa-star"></i> 
+                </p>
             </div>
         </div>
 </template>
@@ -26,7 +26,13 @@
 export default { 
     name: "SeriesCard", 
     props:[
-        "seriesObject"]
+        "seriesObject"], 
+     methods:{
+        star: function (n){
+          return Math.ceil(n / 2);
+
+        }
+    }
 
 
 }
