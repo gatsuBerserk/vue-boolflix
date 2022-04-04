@@ -1,11 +1,19 @@
 <template>
+        <div>
           <div class="container-fluid"> 
                 <div class="row">
                   <Film v-for="(element, index) in movie" :key="index"  
                   :filmObject="element"/>
                 </div>
-          </div>
-                   
+          </div> 
+          <div class="container-fluid"> 
+                <div class="row">
+                  <Series v-for="(element, index) in seriesTv" :key="index"  
+                  :seriesObject="element"/>
+                </div>
+          </div> 
+
+        </div>              
   
      
 
@@ -15,7 +23,7 @@
 
 <script>
 import Film from "./Film.vue";
-
+import Series from "./Series.vue";
 
 
 export default { 
@@ -26,10 +34,12 @@ export default {
       }
     },   
     props:{
-      movie : Array
+      movie : Array,
+      seriesTv : Array
       }, 
     components:{
         Film,
+        Series,
     }, 
 
     methods: { 

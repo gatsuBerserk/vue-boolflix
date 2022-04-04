@@ -5,28 +5,28 @@
             <div class="card-body"> 
                 <p class="card-text">
                     Titotlo Originale:
-                        {{filmObject.original_title}}</p> 
+                        {{seriesObject.original_name}}</p> 
                 <p class="card-text">
-                    {{filmObject.title}}</p>
+                    {{seriesObject.name}}</p>
                 <p class="card-text">
                     Descrizionefw-bold: 
-                        {{filmObject.overview}}</p> 
+                        {{seriesObject.overview}}</p> 
                 <p class="card-text">
                     Lingua originale:
-                        {{filmObject.original_language}}</p>
+                        {{seriesObject.original_language}}</p>
                 <p class="card-text">
                     Voto Medio:
-                        {{filmObject.vote_average}}</p>
+                        {{seriesObject.vote_average}}</p>
             </div>
         </div>
 </template>
 
 <script>
 export default { 
-    name: "FilmCard", 
+    name: "SeriesCard", 
     props:[
-        "filmObject"
-        ]
+        "seriesObject"]
+
 
 }
 </script>

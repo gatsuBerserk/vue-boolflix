@@ -1,9 +1,12 @@
 <template>
   <div id="app">
     <Header 
-      @searchHeader="getApiFilm"/>
-    <Main 
-      :movie="films"/>
+      @searchHeader="searchInApi"/>
+    
+     <Main 
+      :movie="films"
+      :seriesTv="series"/> 
+
               
      
   </div>
@@ -23,23 +26,40 @@ export default {
   },  
   data: function(){
     return{
-      films:[],
+      films:[], 
+      series : [],
     }
   },
 
-  methods: {
-     getApiFilm(search){ 
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=d755169d575162efa23b254cbdafa103&language=en-US&page=1&include_adult=false&query=${search}` ) 
-          .then((response) =>{
-            this.films = response.data.results;
-            console.table(this.films);
-          }) 
-        
-          .catch((error) =>{
-            console.log(error)
-          }); 
-      } 
-    },
+  methods: { 
+    searchInApi:function( search){ 
+      
+        // Search in movie
+        axios
+          .get(`https://api.themoviedb.org/3/search/movie?api_key=d755169d575162efa23b254cbdafa103&language=en-US&page=1&include_adult=false&query=${search}` ) 
+            .then((response) =>{
+              this.films = response.data.results;
+              console.table(this.films);
+            }) 
+          
+            .catch((error) =>{
+              console.log(error)
+            }); 
+       
+        // Search in Series
+        axios.
+          get(`https://api.themoviedb.org/3/search/tv?api_key=d755169d575162efa23b254cbdafa103&language=en-US&page=1&include_adult=false&query=${search}` ) 
+            .then((response) =>{
+              this.series = response.data.results;
+              console.table(this.series);
+            }) 
+          
+            .catch((error) =>{
+              console.log(error)
+            }); 
+        },
+     
+      }, 
 }
 </script>
 
