@@ -15,8 +15,9 @@
                     <lang-flag 
                         :iso="seriesObject.original_language" /> 
                 </p>
-                <p class="card-text" v-for="n in 5 - star(filmObject.vote_average)" :key="n">
-                    <i class="fa-solid fa-star"></i> 
+                <p>Voto: {{star(seriesObject.vote_average)}} </p>
+                <p class="d-inline" v-for="number in star(seriesObject.vote_average)" :key="number">
+                    <span>*</span>
                 </p>
             </div>
         </div>
@@ -26,11 +27,11 @@
 export default { 
     name: "SeriesCard", 
     props:[
-        "seriesObject"], 
+        "seriesObject"
+        ], 
      methods:{
-        star: function (n){
-          return Math.ceil(n / 2);
-
+        star: function (vote){
+          return Math.round(vote / 2);
         }
     }
 

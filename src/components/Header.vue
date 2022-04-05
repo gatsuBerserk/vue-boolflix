@@ -1,6 +1,6 @@
 <template>
   <div>
-      <div class="container-fluid align-items-center">
+      <div class="container-fluid">
         <div class="row"> 
           <div class="col-12 text-end"> 
             <input v-model="search" class="mx-2 rounded-pill my-border p-3" type="text" placeholder="Cerca...">

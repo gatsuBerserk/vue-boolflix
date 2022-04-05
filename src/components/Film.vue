@@ -16,9 +16,13 @@
                         {{filmObject.original_language}} 
                     <lang-flag 
                         :iso="filmObject.original_language" />  
-                </p>
-                <p v-for="n in 5 - star(filmObject.vote_average)" :key="n">
-                  <i class="fa-solid fa-star fs-1"></i>
+                </p> 
+                <p class="card-text" > 
+                    voto: 
+                        {{star(filmObject.vote_average)}} 
+                </p> 
+                <p class="d-inline" v-for="number in star(filmObject.vote_average)" :key="number">
+                    <span>*</span>
                 </p>
             </div>
         </div>
@@ -32,7 +36,7 @@ export default {
         ], 
     methods:{
         star: function (vote){
-          return Math.ceil(vote / 2);
+          return Math.round(vote / 2);
 
         }
     }
