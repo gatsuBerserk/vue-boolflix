@@ -8,13 +8,13 @@ Vue.component('lang-flag', LangFlag);
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 /* import specific icons */
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faPepperHot } from "@fortawesome/free-solid-svg-icons";
 
 /* import font awesome icon component */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 /* add font awesome icon component */ 
 Vue.component("font-awesome-icon", FontAwesomeIcon); 
-library.add(faStar);
+library.add(faPepperHot);
 
 Vue.config.productionTip = false
 

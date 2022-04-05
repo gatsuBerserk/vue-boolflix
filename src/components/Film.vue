@@ -22,7 +22,7 @@
                         {{star(filmObject.vote_average)}} 
                 </p> 
                 <p class="d-inline" v-for="number in star(filmObject.vote_average)" :key="number">
-                    <span>*</span>
+                   <font-awesome-icon icon="fa-solid fa-pepper-hot" />
                 </p>
             </div>
         </div>
