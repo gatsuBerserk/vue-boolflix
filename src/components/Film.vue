@@ -1,16 +1,20 @@
 <template>  
     
       <div class="card m-2" style="width: 18rem;">
-            <img :src="`https://image.tmdb.org/t/p/w342${filmObject.poster_path}`" class="card-img-top" :alt="filmObject.title">
+            <figure>
+                <img v-if="filmObject.poster_path != null" :src="`https://image.tmdb.org/t/p/w342${filmObject.poster_path}`" class="card-img-top" :alt="filmObject.name"> 
+                <img class="not" v-else src="../assets/img/broken-1.png" alt="Not found">
+          </figure>
             <div class="card-body"> 
                 <p class="card-text">
                     Titotlo Originale:
                         {{filmObject.original_title}}</p> 
                 <p class="card-text">
                     {{filmObject.title}}</p>
-                <p class="card-text info">
+                <p class="card-text info overview">
                     Descrizione: 
-                        {{filmObject.overview}}</p> 
+                        {{filmObject.overview}}
+                </p> 
                 <p class="card-text"> 
                     Lingua originale:
                         {{filmObject.original_language}} 
@@ -46,5 +50,29 @@ export default {
 
 <style lang="scss" scoped> 
 @import "../assets/style/style.scss"; 
+.card{
+    img.not{
+    width: 100%; 
+    } 
+
+    .overview{
+        height: 100px;
+        overflow: auto;
+    }
+
+    .card-body{
+        display: none;
+    }
+   
+    &:hover{
+        figure{
+            display: none;          
+         }
+        .card-body{
+        display: block;
+        } 
+    } 
+
+} 
 
 </style>

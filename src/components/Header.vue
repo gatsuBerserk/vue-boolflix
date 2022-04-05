@@ -39,8 +39,9 @@ export default {
 <style lang="scss" scoped> 
  @import "../assets/style/style.scss"; 
 .my-header{
-  background-color:rgb(57, 63, 70) ;
-  height: 100px; 
+  background-color:rgb(57, 63, 70) ; 
+  border-radius: 20px; 
+  height: 100px;
     img{
       width: 80px; 
       border-radius:50% ;

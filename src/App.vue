@@ -63,8 +63,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-#app{
+<style lang="scss">
+html{ 
   background-color: rgb(66, 58, 58);
 }
 
