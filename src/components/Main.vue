@@ -1,5 +1,5 @@
 <template>
-        <div>
+        <div id="Main">
           <div class="container-fluid"> 
                 <div class="row">
                   <Film v-for="(element, index) in movie" :key="index"  
@@ -51,7 +51,8 @@ export default {
 </script>
 
 <style lang="scss" scoped> 
-  @import "../assets/style/style.scss";
+  @import "../assets/style/style.scss"; 
+
 
 
 </style>
