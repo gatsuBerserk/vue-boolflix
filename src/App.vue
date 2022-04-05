@@ -64,6 +64,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+#app{
+  background-color: rgb(66, 58, 58);
+}
 
 </style>

@@ -1,13 +1,15 @@
 <template>
-        <div id="Main">
-          <div class="container-fluid"> 
-                <div class="row">
+        <div id="main">
+          <div class="container mt-3"> 
+                <div class="row justify-content-center "> 
+                  <h1>Film</h1>
                   <Film v-for="(element, index) in movie" :key="index"  
                   :filmObject="element"/>
                 </div>
           </div> 
-          <div class="container-fluid"> 
-                <div class="row">
+          <div class="container"> 
+                <div class="row justify-content-center"> 
+                  <h1>Serie</h1>
                   <Series v-for="(element, index) in seriesTv" :key="index"  
                   :seriesObject="element"/>
                 </div>
@@ -52,7 +54,11 @@ export default {
 
 <style lang="scss" scoped> 
   @import "../assets/style/style.scss"; 
-
-
+  #main{
+    margin: 0 auto;
+  } 
+  h1{
+    color: yellow;
+  } 
 
 </style>

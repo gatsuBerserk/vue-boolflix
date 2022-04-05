@@ -39,7 +39,7 @@ export default {
 <style lang="scss" scoped> 
  @import "../assets/style/style.scss"; 
 .my-header{
-  background-color:rgb(46, 58, 70) ;
+  background-color:rgb(57, 63, 70) ;
   height: 100px; 
     img{
       width: 80px; 

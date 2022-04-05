@@ -1,14 +1,14 @@
 <template>  
     
       <div class="card m-2" style="width: 18rem;">
-            <img :src="`https://image.tmdb.org/t/p/w342${filmObject.backdrop_path}`" class="card-img-top" :alt="filmObject.title">
+            <img :src="`https://image.tmdb.org/t/p/w342${filmObject.poster_path}`" class="card-img-top" :alt="filmObject.title">
             <div class="card-body"> 
                 <p class="card-text">
                     Titotlo Originale:
                         {{filmObject.original_title}}</p> 
                 <p class="card-text">
                     {{filmObject.title}}</p>
-                <p class="card-text">
+                <p class="card-text info">
                     Descrizione: 
                         {{filmObject.overview}}</p> 
                 <p class="card-text"> 
@@ -17,7 +17,7 @@
                     <lang-flag 
                         :iso="filmObject.original_language" />  
                 </p> 
-                <p class="card-text" > 
+                <p class="card-text info" > 
                     voto: 
                         {{star(filmObject.vote_average)}} 
                 </p> 
