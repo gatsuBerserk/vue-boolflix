@@ -15,7 +15,7 @@
                     <span> 
                         Descrizione:
                     </span>
-                        {{seriesObject.overview}}</p> 
+                        {{reduceDescription}}</p> 
                 <p>
                     <span> 
                         Originale:
@@ -25,9 +25,9 @@
                         :iso="seriesObject.original_language" /> 
                 </p>
                 <p>
-                    <span>Voto: {{star(seriesObject.vote_average)}} </span>
+                    <span>Voto: {{vote}}</span>
                 </p>
-                <p class="d-inline" v-for="number in star(seriesObject.vote_average)" :key="number">
+                <p class="d-inline" v-for="number in vote" :key="number">
                    <font-awesome-icon icon="fa-solid fa-pepper-hot" />
                 </p>
             </div> 
@@ -39,12 +39,24 @@ export default {
     name: "SeriesCard", 
     props:[
         "seriesObject"
-        ], 
-     methods:{
-        star: function (vote){
-          return Math.round(vote / 2);
-        }, 
-    }
+        ],
+        computed:{
+            reduceDescription: function(){
+                if(this.seriesObject.overview.length  > 100){
+                     return this.seriesObject.overview.slice(0,100);
+                }else{
+                    return document;
+                }
+            }, 
+            vote: function (){
+                return Math.round( this.seriesObject.vote_average / 2);
+        } 
+        },
+    //  methods:{
+    //     star: function (vote){
+    //       return Math.round(vote / 2);
+    //     }, 
+    // }
 
 
 }
