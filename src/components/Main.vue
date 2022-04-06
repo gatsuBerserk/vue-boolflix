@@ -1,9 +1,13 @@
 <template>
         <div id="main"> 
           <div class="container mt-3"> 
-                <div class="row justify-content-center "> 
+                <div class="row justify-content-center " v-if="movie != '' "> 
                   <Film v-for="(element, index) in movie" :key="index"  
                   :filmObject="element"/>
+                </div> 
+                <div v-else>
+                  <h1>Non ci sono risultati</h1>
+
                 </div>
           </div> 
           <div class="container"> 
